@@ -15,6 +15,12 @@ class CreateFarmsalesTable extends Migration
     {
         Schema::create('farmsales', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('farm_id');
+            
+            $table->unsignedInteger('lot_id');
+            $table->foreign('lot_id')
+                        ->references('id')->on('lots')
+                        ->onDelete('cascade');            
             $table->timestamps();
         });
     }

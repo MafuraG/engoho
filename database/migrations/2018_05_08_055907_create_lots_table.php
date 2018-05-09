@@ -15,6 +15,13 @@ class CreateLotsTable extends Migration
     {
         Schema::create('lots', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 100);
+            $table->string('detail', 1000);
+            $table->boolean('active');
+            $table->unsignedInteger('farm_id');
+            $table->foreign('farm_id')
+                        ->references('id')->on('farms')
+                        ->onDelete('cascade');
             $table->timestamps();
         });
     }
