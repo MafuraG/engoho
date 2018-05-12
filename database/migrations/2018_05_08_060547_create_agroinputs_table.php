@@ -15,8 +15,11 @@ class CreateAgroinputsTable extends Migration
     {
         Schema::create('agroinputs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',100); 
-            $table->string('unitofmeasure',50);           
+            $table->string('name',100);
+            $table->unsignedInteger('unit_id');  
+            $table->foreign('unit_id')
+                        ->references('id')->on('unitofmeasures')
+                        ->onDelete('cascade');            
             $table->timestamps();
         });
     }
