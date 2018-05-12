@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->foreign('type_id')
                         ->references('id')->on('productypes')
                         ->onDelete('cascade');
+            $table->string('unitofmeasure',50);                        
             $table->timestamps();
         });
     }

@@ -17,6 +17,10 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->string('detail', 1000);
+            $table->unsignedInteger('lot_id');            
+            $table->foreign('lot_id')
+                        ->references('id')->on('lots')
+                        ->onDelete('cascade'); 
             $table->timestamps();        
         });
     }

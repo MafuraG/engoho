@@ -15,6 +15,17 @@ class CreateOrderservicesTable extends Migration
     {
         Schema::create('orderservices', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',100);
+            $table->unsignedInteger('task_id');
+            $table->foreign('task_id')
+                        ->references('id')->on('tasks')
+                        ->onDelete('cascade');  
+
+            $table->unsignedInteger('agroservice_id');
+            $table->foreign('agroservice_id')
+                        ->references('id')->on('agroservices')
+                        ->onDelete('cascade');  
+            $table->unsignedBigInteger('price');            
             $table->timestamps();
         });
     }

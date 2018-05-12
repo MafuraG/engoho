@@ -15,6 +15,18 @@ class CreateOrderinputsTable extends Migration
     {
         Schema::create('orderinputs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',100);
+            $table->unsignedInteger('task_id');
+            $table->foreign('task_id')
+                        ->references('id')->on('tasks')
+                        ->onDelete('cascade');  
+                        
+            $table->unsignedInteger('agroinput_id');
+            $table->foreign('agroinput_id')
+                        ->references('id')->on('agroinputs')
+                        ->onDelete('cascade');  
+            $table->unsignedBigInteger('price'); 
+            $table->unsignedInteger('quantity');                         
             $table->timestamps();
         });
     }

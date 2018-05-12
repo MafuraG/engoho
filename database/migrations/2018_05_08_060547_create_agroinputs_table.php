@@ -15,7 +15,8 @@ class CreateAgroinputsTable extends Migration
     {
         Schema::create('agroinputs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',100);
+            $table->string('name',100); 
+            $table->string('unitofmeasure',50);           
             $table->timestamps();
         });
     }
