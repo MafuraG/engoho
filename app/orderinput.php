@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class orderinput extends Model
+class Orderinput extends Model
 {
     //
 }

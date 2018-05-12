@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class wallet extends Model
+class Wallet extends Model
 {
     //
 }
