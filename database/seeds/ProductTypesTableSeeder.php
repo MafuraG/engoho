@@ -12,5 +12,16 @@ class ProductTypesTableSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('productypes')->insert(
+            [
+                'name' => 'Livestock'
+            ]            
+        );
+
+        DB::table('productypes')->insert(
+            [
+                'name' => 'Crops'
+            ]            
+        );
     }
 }
