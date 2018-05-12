@@ -1,5 +1,7 @@
 <?php
 
+use App\Model\Productype;
+use App\Model\Unitofmeasure;
 use Faker\Generator as Faker;
 
 /*
