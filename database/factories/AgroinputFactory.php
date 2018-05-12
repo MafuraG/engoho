@@ -14,6 +14,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Agroinput::class, function (Faker $faker) {
+
     return [
         'name' => $faker->word,
         'unitofmeasure' =>  $faker->word
