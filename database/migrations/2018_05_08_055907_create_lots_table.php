@@ -18,10 +18,14 @@ class CreateLotsTable extends Migration
             $table->string('name', 100);
             $table->string('detail', 1000);
             $table->boolean('active');
-            $table->unsignedInteger('farm_id');
+            $table->unsignedInteger('farm_id');            
             $table->foreign('farm_id')
                         ->references('id')->on('farms')
                         ->onDelete('cascade');
+            $table->unsignedInteger('product_id');            
+            $table->foreign('product_id')
+                        ->references('id')->on('products')
+                        ->onDelete('cascade');            
             $table->timestamps();
         });
     }
