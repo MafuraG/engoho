@@ -1,5 +1,7 @@
 <?php
 
+use App\Model\Farm;
+use App\Model\Product;
 use Faker\Generator as Faker;
 
 /*
@@ -13,11 +15,16 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Model\Lot::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => str_random(10),
+        'name' => $faker->text,
+        'detail' => $faker->paragraph,
+        'active' => true,
+        'farm_id' => function(){
+            return Farm::all()->random();
+        },
+        'product_id' => function(){
+            return Product::all()->random();
+        }
     ];
 });

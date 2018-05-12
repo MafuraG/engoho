@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\Unitofmeasure;
 use Faker\Generator as Faker;
 
 /*
@@ -13,10 +14,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Agroinput::class, function (Faker $faker) {
+$factory->define(App\Model\Agroinput::class, function (Faker $faker) {
 
     return [
-        'name' => $faker->word,
-        'unitofmeasure' =>  $faker->word
+        'name' => $faker->text,  
+        'unit_id' => function(){
+            return Unitofmeasure::all()->random();
+        }      
     ];
 });
