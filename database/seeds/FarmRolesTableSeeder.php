@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class FarmRolesTableSeeder extends Seeder
@@ -38,6 +39,12 @@ class FarmRolesTableSeeder extends Seeder
         DB::table('farmroles')->insert(
             [
                 'name' => 'Agent'
+            ]            
+        );
+
+        DB::table('farmroles')->insert(
+            [
+                'name' => 'Veterinary'
             ]            
         );
 

@@ -12,5 +12,6 @@ class FarmSalesTableSeeder extends Seeder
     public function run()
     {
         //
+        
     }
 }
