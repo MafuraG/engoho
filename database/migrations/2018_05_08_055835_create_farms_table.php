@@ -15,7 +15,7 @@ class CreateFarmsTable extends Migration
     {
         Schema::create('farms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
+            $table->string('name', 250);
             $table->string('address', 100);
             $table->timestamps();
             $table->unsignedInteger('owner_id');

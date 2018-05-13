@@ -15,7 +15,7 @@ class CreateOrderservicesTable extends Migration
     {
         Schema::create('orderservices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',100);
+            $table->string('name',250);
             $table->unsignedInteger('task_id');
             $table->foreign('task_id')
                         ->references('id')->on('tasks')

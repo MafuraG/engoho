@@ -15,7 +15,7 @@ class CreateLotsTable extends Migration
     {
         Schema::create('lots', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
+            $table->string('name', 250);
             $table->string('detail', 1000);
             $table->boolean('active');
             $table->unsignedInteger('farm_id');            
