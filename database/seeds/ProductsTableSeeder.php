@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProductTypesTableSeeder extends Seeder
+class ProductsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,11 +21,18 @@ class ProductTypesTableSeeder extends Seeder
 
         DB::table('productypes')->insert(
             [
+                'name' => 'Produce'
+            ]            
+        );
+
+        DB::table('productypes')->insert(
+            [
                 'name' => 'Crops'
             ]            
         );
         $livestock = DB::table('productypes')->where('name','Livestock');
         $crops = DB::table('producttypes')->where('name','Crops');
+        $produce = DB::table('producttypes')->where('name','Produce');
 
         //unit of measure 
         DB::table('unitofmeasures')->insert(
@@ -84,7 +91,7 @@ class ProductTypesTableSeeder extends Seeder
         DB::table('products')->insert(
             [
                 'name' => 'Chicken eggs',
-                'type_id' => $livestock->id,
+                'type_id' => $produce->id,
                 'unit_id' => $dozen->id
             ]            
         );
@@ -92,7 +99,7 @@ class ProductTypesTableSeeder extends Seeder
         DB::table('products')->insert(
             [
                 'name' => 'Cow milk',
-                'type_id' => $livestock->id,
+                'type_id' => $produce->id,
                 'unit_id' => $litres->id
             ]            
         );

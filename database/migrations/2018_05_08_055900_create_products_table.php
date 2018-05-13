@@ -18,9 +18,12 @@ class CreateProductsTable extends Migration
             $table->string('name',100);
             $table->unsignedInteger('type_id');
             $table->foreign('type_id')
-                        ->references('id')->on('productypes')
-                        ->onDelete('cascade');
-            $table->string('unitofmeasure',50);                        
+                ->references('id')->on('productypes')
+                ->onDelete('cascade');
+            $table->unsignedInteger('unit_id');  
+            $table->foreign('unit_id')
+                ->references('id')->on('unitofmeasures')
+                ->onDelete('cascade');                          
             $table->timestamps();
         });
     }
