@@ -21,7 +21,8 @@ class CreateFarmroleUsersTable extends Migration
             $table->unsignedInteger('farmrole_id');
             $table->foreign('farmrole_id')
                         ->references('id')->on('farmroles')
-                        ->onDelete('cascade');                         
+                        ->onDelete('cascade'); 
+            $table->timestamps();                                    
         });
     }
 

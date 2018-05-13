@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         echo "Orderservices generated \r\n";
         factory(App\Model\Orderinput::class,1000) ->create();
         echo "Orderinputs generated \r\n";
-        factory(App\Model\Farmrole_User::class,25) ->create();
+        factory(App\Model\FarmroleUser::class,25) ->create();
         echo "Farmroles generated \r\n";
         
     }
