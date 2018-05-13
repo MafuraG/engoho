@@ -30,9 +30,10 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Crops'
             ]            
         );
-        $livestock = DB::table('productypes')->where('name','Livestock');
-        $crops = DB::table('producttypes')->where('name','Crops');
-        $produce = DB::table('producttypes')->where('name','Produce');
+        $livestock = DB::table('productypes')->where('name','Livestock')->first();
+        $crops = DB::table('productypes')->where('name','Crops')->first();
+        $produce = DB::table('productypes')->where('name','Produce')->first();
+        //echo $livestock ;
 
         //unit of measure 
         DB::table('unitofmeasures')->insert(
@@ -92,7 +93,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Chicken eggs',
                 'type_id' => $produce->id,
-                'unit_id' => $dozen->id
+                'unit_id' => $dozens->id
             ]            
         );
 

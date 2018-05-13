@@ -12,63 +12,80 @@ class AgroInputsTableSeeder extends Seeder
     public function run()
     {
         //
+        $bags = DB::table('unitofmeasures')->where('name','bag')->first();
+        $kilograms = DB::table('unitofmeasures')->where('name','kilogram')->first();
+        $bales = DB::table('unitofmeasures')->where('name','bale')->first();
+        $litres = DB::table('unitofmeasures')->where('name','litre')->first();
+        $heads = DB::table('unitofmeasures')->where('name','head')->first();
+        $dozens = DB::table('unitofmeasures')->where('name','dozen')->first();
+
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Fertilizer Phosphate'
+                'name' => 'Fertilizer Phosphate',
+                'unit_id' => $bags->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Fertilizer Ammonia'
+                'name' => 'Fertilizer Ammonia',
+                'unit_id' => $bags->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Fertilizer Urea'
+                'name' => 'Fertilizer Urea',
+                'unit_id' => $bags->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Maize seeds'
+                'name' => 'Maize seeds',
+                'unit_id' => $bags->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Chicken feed'
+                'name' => 'Chicken feed',
+                'unit_id' => $bags->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Pesticide Maize '
+                'name' => 'Pesticide Maize ',
+                'unit_id' => $litres->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Vaccines for Cows '
+                'name' => 'Vaccines for Cows ',
+                'unit_id' => $litres->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Chicken vaccines'
+                'name' => 'Chicken vaccines',
+                'unit_id' => $litres->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Bean seeds'
+                'name' => 'Bean seeds',
+                'unit_id' => $kilograms->id
             ]            
         );
 
         DB::table('agroinputs')->insert(
             [
-                'name' => 'Jembe'
+                'name' => 'Jembe',
+                'unit_id' => $dozens->id
             ]            
         );
     }

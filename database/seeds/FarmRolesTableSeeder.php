@@ -11,7 +11,8 @@ class FarmRolesTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {  
+        //$something = 'something';
         DB::table('farmroles')->insert(
             [
                 'name' => 'Farmer'
