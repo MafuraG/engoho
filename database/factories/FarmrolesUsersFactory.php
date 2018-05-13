@@ -2,6 +2,7 @@
 
 use Faker\Generator as Faker;
 use App\Model\Farmrole;
+use App\Model\User;
 
 /*
 |--------------------------------------------------------------------------
