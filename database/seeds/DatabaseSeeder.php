@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         factory(App\Model\Farmsale::class,2000) ->create();
         echo "Farmsales generated \r\n";
         factory(App\Model\Task::class,1000) ->create();
-        echo "Orderservices generated \r\n";
+        echo "Tasks generated \r\n";
         factory(App\Model\Orderservice::class,1000) ->create();
         echo "Orderservices generated \r\n";
         factory(App\Model\Orderinput::class,1000) ->create();
