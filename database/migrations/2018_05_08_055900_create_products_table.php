@@ -16,12 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',100);
-            $table->unsignedInteger('type_id');
-            $table->foreign('type_id')
+            $table->unsignedInteger('productype_id');
+            $table->foreign('productype_id')
                 ->references('id')->on('productypes')
                 ->onDelete('cascade');
-            $table->unsignedInteger('unit_id');  
-            $table->foreign('unit_id')
+            $table->unsignedInteger('unitofmeasure_id');  
+            $table->foreign('unitofmeasure_id')
                 ->references('id')->on('unitofmeasures')
                 ->onDelete('cascade');                          
             $table->timestamps();

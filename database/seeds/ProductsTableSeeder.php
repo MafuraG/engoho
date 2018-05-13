@@ -84,24 +84,24 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert(
             [
                 'name' => 'Chicken',
-                'type_id' => $livestock->id,
-                'unit_id' => $heads->id
+                'productype_id' => $livestock->id,
+                'unitofmeasure_id' => $heads->id
             ]            
         );
 
         DB::table('products')->insert(
             [
                 'name' => 'Chicken eggs',
-                'type_id' => $produce->id,
-                'unit_id' => $dozens->id
+                'productype_id' => $produce->id,
+                'unitofmeasure_id' => $dozens->id
             ]            
         );
 
         DB::table('products')->insert(
             [
                 'name' => 'Cow milk',
-                'type_id' => $produce->id,
-                'unit_id' => $litres->id
+                'productype_id' => $produce->id,
+                'unitofmeasure_id' => $litres->id
             ]            
         );
 
@@ -109,24 +109,24 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert(
             [
                 'name' => 'Cows',
-                'type_id' => $livestock->id,
-                'unit_id' => $heads->id
+                'productype_id' => $livestock->id,
+                'unitofmeasure_id' => $heads->id
             ]            
         );
 
         DB::table('products')->insert(
             [
                 'name' => 'maize in bags',
-                'type_id' => $crops->id,
-                'unit_id' => $bags->id
+                'productype_id' => $crops->id,
+                'unitofmeasure_id' => $bags->id
             ]            
         );
 
         DB::table('products')->insert(
             [
                 'name' => 'beans in bags',
-                'type_id' => $crops->id,
-                'unit_id' => $bags->id
+                'productype_id' => $crops->id,
+                'unitofmeasure_id' => $bags->id
             ]            
         );
 

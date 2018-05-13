@@ -25,6 +25,7 @@ class CreateOrderinputsTable extends Migration
             $table->foreign('agroinput_id')
                         ->references('id')->on('agroinputs')
                         ->onDelete('cascade');  
+                        
             $table->unsignedBigInteger('price'); 
             $table->unsignedInteger('quantity');                         
             $table->timestamps();

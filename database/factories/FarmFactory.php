@@ -17,7 +17,7 @@ $factory->define(App\Model\Farm::class, function (Faker $faker) {
     return [
         'name' => $faker->text,
         'address' => $faker->address,
-        'owner_id' => function(){
+        'user_id' => function(){
             return User::all()->random();
         }    
         

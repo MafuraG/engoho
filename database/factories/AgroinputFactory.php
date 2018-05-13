@@ -18,7 +18,7 @@ $factory->define(App\Model\Agroinput::class, function (Faker $faker) {
 
     return [
         'name' => $faker->text,  
-        'unit_id' => function(){
+        'unitofmeasure_id' => function(){
             return Unitofmeasure::all()->random();
         }      
     ];

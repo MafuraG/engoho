@@ -18,12 +18,8 @@ class CreateFarmsalesTable extends Migration
             $table->unsignedInteger('lot_id');            
             $table->foreign('lot_id')
                         ->references('id')->on('lots')
-                        ->onDelete('cascade');  
-                        
-            $table->unsignedInteger('product_id');            
-            $table->foreign('product_id')
-                        ->references('id')->on('products')
-                        ->onDelete('cascade');   
+                        ->onDelete('cascade');           
+              
             $table->unsignedBigInteger('price'); 
             $table->unsignedInteger('quantity');                   
             $table->timestamps();

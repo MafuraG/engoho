@@ -1,5 +1,7 @@
 <?php
 use App\Model\Farm;
+use App\Model\Lot;
+use App\Model\Product;
 use Faker\Generator as Faker;
 
 /*
@@ -15,10 +17,10 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Model\Farmsale::class, function (Faker $faker) {
     $farm = Farm::all()->random();
-    $lot = $farm->lots()->random();
+    //echo "Farm name ".$farm->name;
+    $lot = $farm->lots->random();
     return [
-        'lot_id' => $lot,
-        'product_id' => $lot->Product,
+        'lot_id' => $lot->id,        
         'price' => $faker->numberBetween(10, 2000),
         'quantity' =>$faker->numberBetween(1,30)
     ];

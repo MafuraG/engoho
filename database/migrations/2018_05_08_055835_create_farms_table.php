@@ -18,8 +18,8 @@ class CreateFarmsTable extends Migration
             $table->string('name', 250);
             $table->string('address', 100);
             $table->timestamps();
-            $table->unsignedInteger('owner_id');
-            $table->foreign('owner_id')
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')
                         ->references('id')->on('users')
                         ->onDelete('cascade');
         });
