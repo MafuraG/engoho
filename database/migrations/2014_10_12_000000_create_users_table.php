@@ -19,6 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedInteger('farmrole_id');
+            $table->foreign('farmrole_id')
+                        ->references('id')->on('farmroles')
+                        ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
