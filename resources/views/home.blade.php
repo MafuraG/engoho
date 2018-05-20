@@ -8,7 +8,7 @@
               <div class="card-body text-center d-flex flex-column">
                 <h4 class="card-title text-center">Farmer</h4>
                 <p class="card-text">Some text inside the first card</p>   
-                <a  href="#" class="mt-auto btn btn-primary">Open</a>             
+                <a  href="{{ url('/farmer') }}" class="mt-auto btn btn-primary">Open</a>             
               </div>   
             </div>
 
